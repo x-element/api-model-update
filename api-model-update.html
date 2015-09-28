@@ -12,7 +12,7 @@
       handleAs="[[handleAs]]"
       content-type="[[contentType]]"
       body="{{body}}"
-      last-response="{{model}}"
+      last-response="{{response}}"
       last-error="{{error}}">
     </iron-ajax>
 
@@ -39,7 +39,7 @@
       collection: {
         type: String
       },
-      model_id: {
+      modelId: {
         type: String
       },
       url: {
@@ -60,7 +60,7 @@
       body: {
         type: String
       },
-      model: {
+      response: {
         type: Object,
         notify: true
       },
@@ -72,8 +72,8 @@
 
     _compute_url: function () {
       var url;
-      if (this.collection && this.model_id) {
-        url = '/api/' + this.collection + '/' + this.model_id;
+      if (this.collection && this.modelId) {
+        url = '/api/' + this.collection + '/' + this.modelId;
         url = url.replace(/\/\/+/, '/');
         this.url = url;
       }
