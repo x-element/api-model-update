@@ -53,6 +53,9 @@
         type: Object,
         value: function () { return {}; }
       },
+      accessToken: {
+        type: String
+      },
       data: {
         type: Object,
         value: function () { return {}; }
@@ -80,8 +83,8 @@
     },
 
     _compute_headers: function () {
-      if (this.access_token) {
-        this.headers.Authorization = this.access_token;
+      if (this.accessToken) {
+        this.headers.Authorization = this.accessToken;
       }
     },
 
